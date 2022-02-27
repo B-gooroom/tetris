@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+
 function App() {
+  const iBlock = [0, 0]
   const tetris = [
-    [true, true, true, false, false, false, false, false, false, false],
-    [false, true, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
+    [false, false, false, false, false, false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false, false],
@@ -22,6 +25,24 @@ function App() {
     [false, false, false, false, false, false, false, false, false, false],
     [false, false, false, false, false, false, false, false, false, false]
   ];
+  const keyEvent = (event) => {
+    switch(event.key) {
+      case 'ArrowLeft':
+        // this.directionBar('bar2Direct', -10)
+        console.log('arrowLeft');
+        break;
+      case 'ArrowRight':
+        // this.directionBar('bar2Direct', 10)
+        console.log('arrowRight');
+        break;
+      default:
+        break;
+    }
+  };
+  useEffect(() => {
+    document.addEventListener('keydown', keyEvent);
+    // TODO: iBlock 그리기
+  }, []);
   return (
     <div className="App">
       <h1>Tetris</h1>
