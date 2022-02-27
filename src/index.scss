@@ -1,0 +1,20 @@
+.playBoard {
+  background-color: #333;
+  // border: 1px solid white;
+  width: 240px;
+  height: 400px;
+  border-collapse: collapse;
+
+  td {
+    border: 1px solid white;
+    
+    &.fill {
+      background-color: aquamarine;
+    }
+
+    &.extra {
+      background-color: lightgrey;
+    }
+  }
+  
+}
