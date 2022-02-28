@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import Header from './components/Header.js';
 
 function App() {
   const iBlock = [0, 0]
@@ -26,7 +27,7 @@ function App() {
     [false, false, false, false, false, false, false, false, false, false]
   ];
   const keyEvent = (event) => {
-    switch(event.key) {
+    switch (event.key) {
       case 'ArrowLeft':
         // this.directionBar('bar2Direct', -10)
         console.log('arrowLeft');
@@ -45,18 +46,19 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <Header></Header>
       <h1>Tetris</h1>
       <table className="playBoard">
         <tbody>
-        {tetris.map((gridY, i) => (
-          <tr key={i}>
-            <td className="extra"></td>
-            {gridY.map((gridX, j) => (
-            <td key={j} className={gridX ? 'fill' : 'empty'}>{gridX}</td>
-            ))}
-            <td className="extra"></td>
-          </tr>
-        ))}
+          {tetris.map((gridY, i) => (
+            <tr key={i}>
+              <td className="extra"></td>
+              {gridY.map((gridX, j) => (
+                <td key={j} className={gridX ? 'fill' : 'empty'}>{gridX}</td>
+              ))}
+              <td className="extra"></td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
